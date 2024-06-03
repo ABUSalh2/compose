@@ -1,14 +1,16 @@
 version: "3.8"
 services:
   react:
-    build: ./frontend
+    image: abusalh/class2code:react
+    # build: ./frontend
     ports:
       - "5173:5173"
     networks:
       - network-backend
 
   express:
-    build: ./Backend
+    image: abusalh/class2code:express
+    # build: ./Backend
     environment:
       - AI_USERNAME=QA2!eR23c
       - AI_PASSWORD=yu23M@1R!f
@@ -27,7 +29,8 @@ services:
       - network-backend
 
   flask:
-    build: ./PythonBackend
+    image: abusalh/class2code:flask
+    # build: ./PythonBackend
     environment:
       - REDIS_URL=host.docker.internal
     ports:
